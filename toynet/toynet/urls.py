@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mininet.viewset.router import router
+from mininet.viewset.router import router as mininetrouter
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('data/mininet/',include(router.urls)),
+    path('data/mininet/',include(mininetrouter.urls)),
 ]
