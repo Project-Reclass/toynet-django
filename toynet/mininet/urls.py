@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.apiOverview, name='api-overview'),
-    path('show/', views.mininetShow, name='mininet-show'),
+    path('showall/', views.mininetShowall, name='mininet-showall'),
+    path('<int:pk>/', views.mininetShow),
 ]
