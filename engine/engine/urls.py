@@ -1,4 +1,4 @@
-"""toynet URL Configuration
+"""engine URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mininet.viewset.router import router as mininetrouter
+from api.viewset.router import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('data/mininet/',include(mininetrouter.urls)),
+    path('data/', include(router.urls)),
 ]

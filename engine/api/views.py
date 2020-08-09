@@ -7,6 +7,6 @@ from rest_framework.response import Response
 @api_view(['GET'])
 def apiOverview(request):
     api_urls = {
-        'mininet': '/mininet/',
+        'toynet': '/toynet/',
     }
     return Response(api_urls)
