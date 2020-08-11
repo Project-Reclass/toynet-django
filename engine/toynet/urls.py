@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.apiOverview, name='api-overview'),
-    path('session/create', views.createToyNetSession, name='toynet-create'),
-    path('session/show/<int:pk>/', views.showToyNetSession, name='toynet-show'),
+    path('config/show/<int:pk>/', views.showToyNetConfig, name='toynetconfig-show'),
+    path('session/create', views.createToyNetSession, name='toynetsession-create'),
+    path('session/show/<int:pk>/', views.showToyNetSession, name='toynetsession-show'),
 ]
