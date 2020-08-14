@@ -15,7 +15,7 @@ class ToyNetSession(models.Model):
     last_update_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return str(self.user_id) + self.create_time.strftime('%m/%d/%Y, %H:%M:%S')
+        return str(self.user_id) + self.time.strftime('%m/%d/%Y, %H:%M:%S')
 
 class ToyNetSessionOperation(models.Model):
     toynet_id = models.ForeignKey('ToyNetSession', on_delete=models.CASCADE)
