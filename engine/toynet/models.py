@@ -11,7 +11,6 @@ class ToyNetSession(models.Model):
     toynetconfig = models.ForeignKey('ToyNetConfig', on_delete=models.CASCADE)
     topology = models.TextField(default='<>')
     user_id = models.IntegerField(blank=True, default=0)
-    image = models.TextField(blank=True, default='')
     time = models.DateTimeField(auto_now_add=True)
     last_update_time = models.DateTimeField(auto_now_add=True)
 
