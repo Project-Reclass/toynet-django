@@ -50,7 +50,7 @@ def visualizeToyNetSession(request, pk):
     except IOError:
         return Response('There was an error')
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def modifyToyNetSession(request, pk):
     reqJson = json.loads(request.body.decode('utf-8'))
     command = reqJson['command']

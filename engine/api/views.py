@@ -10,6 +10,6 @@ def apiOverview(request):
         'POST Create ToyNet (toynet_id, user_id)': 'toynet/session/create',
         'GET Visualize ToyNet Topology': 'toynet/session/visualize/<str:pk>',
         'GET Retrieve ToyNet Topology': 'toynet/session/show/<str:pk>',
-        'POST Modify ToyNet Topology (command)': 'toynet/session/modify/<str:pk>',
+        'PUT Modify ToyNet Topology (command)': 'toynet/session/modify/<str:pk>',
     }
     return Response(api_urls)
