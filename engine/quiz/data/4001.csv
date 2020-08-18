@@ -1,0 +1,10 @@
+﻿idx,question,a,b,c,d,answer
+1,Which type of fiber is best suited for long distance transmission? ,Multi-Mode Fiber,Single-mode Fiber,Small Form Factor Pluggable,Fast Fiber,b
+2,What level of the 7 Layer OSI model are Routers in? ,Physical,Data Link,Network,Transport,c
+3,What part of IP packet determines destination?,MAC Address,Ethernet,IP Address,Payload,c
+4,What part of IP packet determines what we seek?,MAC address,Ethernet,IP Address,Payload,a
+5,What is the name of a network spanning a small area?,Local Area Network  (LAN),Limited Area Network (LAN),Line Area Network (LAN),Wide Area Network (WAN),a
+6,"In order to send an IP Packet, what is the first step before it can get sent?",Deencapsulation,Routing,Gateway,Encapsulation,d
+7,Which Internet speed was referred to as Cable Internet?,Single-mode Fiber,Multi-mode Fiber,Coaxial Cable,CAT5,d
+8,Which Small Factor Pluggable is capable of speeds over 40 Gbps?,Small Factor Pluggable (SFP),Quad Small Factor Pluggable (QSFP),Small Factor Pluggable Plus (SFP+),Multi Small Factor Pluggable (MSFP),b
+9,Which Cable type is divided into categories abbreviated CAT?,Multi-mode Fiber,Bus topography,Twisted Pair Cable,Coaxial Cable,c

@@ -1,0 +1,9 @@
+﻿idx,question,a,b,c,d,answer
+1,How many nodes share a single channel on a bus topology?,All nodes,Only ones communicating,One node,Three nodes,a
+2,Which of the following is the most fault-tolerant WAN topology?,Partial Mesh,Ring,Star,Full-mesh,d
+3,"If a full-mesh WAN consists of four locations, how many separate connections does it contain?",two,six,four,eight,b
+4,What makes IEEE Standards so important for business and network specialists?,interoperability,internet,instruments,interloaded,a
+5,Which IEEE working group oversees all LAN/MAN Standards?,802,803,804,805,a
+6,What piece of hardware is usually at the centre of a star network?,Modem,Server,Hub,Router,c
+7,A Combination of bus and star topologies is called a?,Combo Network,Ring Network,Starbus Network,Tree Network,d
+8,The Internet is an example of which topology? ,Bus,Star,Ring,Mesh,d
