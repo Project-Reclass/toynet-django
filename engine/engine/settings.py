@@ -47,7 +47,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
+    'lesson.apps.LessonConfig',
     'toynet.apps.ToyNetConfig',
+    'article.apps.ArticleConfig',
+    'quiz.apps.QuizConfig',
     'rest_framework',
 ]
 
