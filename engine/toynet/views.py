@@ -3,9 +3,17 @@ from django.http import JsonResponse, HttpResponse
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializer import ToyNetConfigSerializer, ToyNetSessionSerializer
 
+from .serializer import ToyNetConfigSerializer, ToyNetSessionSerializer
 from .models import ToyNetConfig, ToyNetSession
+
+from .emulator import xmlParser as parser
+
+from .emulator.toydiagram.diagramTree import DiagramGraph
+from .emulator.toydiagram.network import ToyNetDiagram, ToySubnet
+from .emulator.toydiagram.nodes.switch import Switch
+from .emulator.toydiagram.nodes.host import Host
+from .emulator.toydiagram.nodes.router import Router
 
 import json
 import os
@@ -39,12 +47,38 @@ def showToyNetSession(request, pk):
 @api_view(['GET'])
 def visualizeToyNetSession(request, pk):
     toynetsession = ToyNetSession.objects.get(pk=pk)
+    filename = 'emulator/visualizations/pusheen'
 
-    # generate image in visualizations/ as <sessionid>-<timestamp>.png
+    config:parser.ToyTopoConfig = parser.parseXML(toynetsession.topology)
+
+    print('__INFO___ Generating Diagram Graph from Configurations')
+    graph = DiagramGraph(config)
+    print('__INFO___ Generating Diagram Tree from Diagram Graph')
+    diagramTree = graph.getDiagramTree()
+
+    nodes = dict()
+    with ToyNetDiagram('ToyNet Demo Network', 'toynet/' + filename, show=False):
+        # devices
+        for deviceName in diagramTree.routers:
+            nodes[deviceName] = Router(deviceName)
+
+        for (i, subnet) in enumerate(diagramTree.subnets):
+            with ToySubnet("subnet" + str(i)):
+                for deviceName in subnet.switches:
+                        nodes[deviceName] = Switch(deviceName)
+                for deviceName in subnet.hosts:
+                        nodes[deviceName] = Host(deviceName)
+
+        # cables
+        for (n1, n2) in diagramTree.primaryLinks:
+            nodes[n1] >> nodes[n2]
+
+        for (n1, n2) in diagramTree.secondaryLinks:
+            nodes[n1] >> nodes[n2]
 
     try:
         currentDir = os.path.dirname(__file__)
-        relativeImageFilePath = "visualizations/sample.png"
+        relativeImageFilePath = filename + '.png'
         with open(os.path.join(currentDir, relativeImageFilePath), "rb") as f:
             return HttpResponse(f.read(), content_type="image/png")
     except IOError:
