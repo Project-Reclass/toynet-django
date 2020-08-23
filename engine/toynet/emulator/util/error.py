@@ -24,7 +24,7 @@ class XMLParseError(Exception):
     """
 
     def __init__(self, msg: str, filename: str):
-        self.message = msg + ' (File: ' + entity.toShortString() + ')'
+        self.message = msg + ' (File: ' + filename + ')'
 
 class ToyDiagramError(Exception):
     """Base class for Exceptions produced by ToyDiagrams"""

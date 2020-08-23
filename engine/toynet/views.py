@@ -9,6 +9,8 @@ from .models import ToyNetConfig, ToyNetSession
 
 from .emulator import xmlParser as parser
 
+from .emulator.command.commandParser import parseModificationCommand
+
 from .emulator.toydiagram.diagramTree import DiagramGraph
 from .emulator.toydiagram.network import ToyNetDiagram, ToySubnet
 from .emulator.toydiagram.nodes.switch import Switch
@@ -17,6 +19,7 @@ from .emulator.toydiagram.nodes.router import Router
 
 import json
 import os
+from xml.etree import ElementTree as ET
 
 @api_view(['POST'])
 def createToyNetSession(request):
@@ -49,10 +52,10 @@ def visualizeToyNetSession(request, pk):
     toynetsession = ToyNetSession.objects.get(pk=pk)
     filename = 'emulator/visualizations/pusheen'
 
-    config:parser.ToyTopoConfig = parser.parseXML(toynetsession.topology)
+    topology:parser.ToyTopoConfig = parser.parseXML(toynetsession.topology)
 
     print('__INFO___ Generating Diagram Graph from Configurations')
-    graph = DiagramGraph(config)
+    graph = DiagramGraph(topology)
     print('__INFO___ Generating Diagram Tree from Diagram Graph')
     diagramTree = graph.getDiagramTree()
 
@@ -92,9 +95,13 @@ def modifyToyNetSession(request, pk):
     # store new modification event
 
     toynetsession = ToyNetSession.objects.get(pk=pk)
+    xmlTopology:ET = ET.fromstring(toynetsession.topology)
 
-    # modify topology to based on command
-    # commit topology
+
+    xmlTopology = parseModificationCommand(command, xmlTopology)
+    xmlString = topology=ET.tostring(xmlTopology, encoding='utf-8').decode('utf-8')
+
+    ToyNetSession.objects.select_for_update().filter(pk=pk).update(topology=xmlString)
 
     return Response({
         'message': 'updated topology coming soon for ' + command,

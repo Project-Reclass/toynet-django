@@ -15,5 +15,5 @@ class ToyNetNode(Node):
 
   #TODO: TAYTAY is this hacky?
   def _load_icon(self):
-    basedir = Path(os.path.abspath(os.path.dirname(__file__)) + "/taydiagram" )
+    basedir = Path(os.path.abspath(os.path.dirname(__file__)) + "/toydiagram" )
     return os.path.join(basedir.parent, self._icon_dir, self._icon)
