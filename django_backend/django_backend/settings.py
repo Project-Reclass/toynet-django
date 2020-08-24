@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'curriculum_api.apps.CurriculumApiConfig',
     'rest_framework',
     'emulator.apps.EmulatorConfig',
     'django.contrib.admin',
