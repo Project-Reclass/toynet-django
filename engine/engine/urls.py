@@ -18,6 +18,7 @@ from django.urls import path, include
 from api.viewset.router import router
 
 urlpatterns = [
+    path('healthcheck/', include('health_check.urls')),
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('data/', include(router.urls)),

@@ -4,6 +4,7 @@ astroid==2.4.2
 diagrams==0.16.0
 distlib==0.3.1
 Django==3.0.8
+django-health-check==3.12.1
 djangorestframework==3.11.0
 filelock==3.0.12
 graphviz==0.13.2

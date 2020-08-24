@@ -29,11 +29,13 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'backend',
     'localhost',
+    '*',
+    'internal-toynet-django-lb-182235266.us-east-2.elb.amazonaws.com',
 ]
 
 
@@ -52,6 +54,7 @@ INSTALLED_APPS = [
     'article.apps.ArticleConfig',
     'quiz.apps.QuizConfig',
     'rest_framework',
+    'health_check',
 ]
 
 MIDDLEWARE = [
