@@ -60,7 +60,7 @@ def visualizeToyNetSession(request, pk):
     diagramTree = graph.getDiagramTree()
 
     nodes = dict()
-    with ToyNetDiagram('ToyNet Demo Network', 'toynet/' + filename, show=False):
+    with ToyNetDiagram('ToyNet Demo Network', 'engine/toynet/' + filename, show=False):
         # devices
         for deviceName in diagramTree.routers:
             nodes[deviceName] = Router(deviceName)
