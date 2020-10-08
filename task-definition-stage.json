@@ -2,7 +2,7 @@
     "containerDefinitions": [
         {
             "name": "toynet-django-container",
-            "image": "909056806605.dkr.ecr.us-west-1.amazonaws.com/toynet-django",
+            "image": "909056806605.dkr.ecr.us-west-2.amazonaws.com/toynet-django-stage",
             "cpu": 0,
             "memoryReservation": 256,
             "portMappings": [{
@@ -15,7 +15,7 @@
             "volumesFrom": [],
             "secrets": [{
                 "name": "SECRET_KEY",
-                "valueFrom": "arn:aws:secretsmanager:us-west-1:909056806605:secret:toynet-django-secretkey-Mc0IOT"
+                "valueFrom": "arn:aws:secretsmanager:us-west-2:909056806605:secret:toynet-django-secret-key-stage-9kcnzx"
             }]
         }
     ],
