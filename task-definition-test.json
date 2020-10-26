@@ -1,0 +1,30 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "toynet-django-container",
+            "image": "909056806605.dkr.ecr.us-west-2.amazonaws.com/toynet-django-stage",
+            "cpu": 0,
+            "memoryReservation": 256,
+            "portMappings": [{
+                "hostPort": 0,
+                "containerPort": 8000,
+                "protocol": "tcp"
+            }],
+            "essential": true,
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [{
+                "name": "SECRET_KEY",
+                "valueFrom": "arn:aws:secretsmanager:us-east-1:909056806605:secret:toynet-django-secretkey-qxjhxQ"
+            }]
+        }
+    ],
+    "executionRoleArn": "arn:aws:iam::909056806605:role/ecsTaskExecutionRole-toynet-django",
+    "family": "toynet-django",
+    "volumes": [],
+    "placementConstraints": [],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "memory": "256"
+}
