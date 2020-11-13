@@ -2,8 +2,8 @@ from xml.etree import ElementTree
 from typing import List, Tuple
 import functools
 
-from engine.toynet.emulator.util.error import XMLParseError
-from engine.toynet.emulator.util import typecheck as tc
+from toynet.emulator.util.error import XMLParseError
+from toynet.emulator.util import typecheck as tc
 
 class Name(str): pass
 class IP(str): pass

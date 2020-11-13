@@ -1,5 +1,5 @@
 from typing import List, Tuple
-from engine.toynet.emulator.xmlParser import ToyTopoConfig, RouterConfig, SwitchConfig, HostConfig, InterfaceConfig
+from toynet.emulator.xmlParser import ToyTopoConfig, RouterConfig, SwitchConfig, HostConfig, InterfaceConfig
 
 def makeToyTopoConfig(routers:List[str], switches:List[str], hosts:List[str], links:List[Tuple[str,str]],
     root:str=None)-> ToyTopoConfig:

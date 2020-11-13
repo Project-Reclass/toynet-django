@@ -1,9 +1,9 @@
 import unittest
 
-from engine.toynet.emulator.toydiagram.diagramTree import DiagramGraph
-from engine.toynet.emulator.util.error import DiagramGraphError
+from toynet.emulator.toydiagram.diagramTree import DiagramGraph
+from toynet.emulator.util.error import DiagramGraphError
 
-import engine.toynet.emulator.tests.util as testutil
+import toynet.emulator.tests.util as testutil
 
 class TestDiagramTreeMethods(unittest.TestCase):
     def test_DiagramTree__basicCreation_router(self):
