@@ -1,9 +1,9 @@
 import unittest
 
-from engine.toynet.emulator.toydiagram.diagramTree import DiagramGraph, DeviceType
-from engine.toynet.emulator.util.error import DiagramGraphError
+from toynet.emulator.toydiagram.diagramTree import DiagramGraph, DeviceType
+from toynet.emulator.util.error import DiagramGraphError
 
-import engine.toynet.emulator.tests.util as testutil
+import toynet.emulator.tests.util as testutil
 
 class TestDiagramGraphMethods(unittest.TestCase):
 

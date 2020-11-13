@@ -1,11 +1,11 @@
 import unittest
 
-from engine.toynet.emulator.xmlParser import HostConfig
-import engine.toynet.emulator.xmlParser as parser
-import engine.toynet.emulator.tests.util as testutil
+from toynet.emulator.xmlParser import HostConfig
+import toynet.emulator.xmlParser as parser
+import toynet.emulator.tests.util as testutil
 
 class TestXMLParserMethods(unittest.TestCase):
-    sample_linuxrouter = './engine/toynet/emulator/tests/sample_inputs/linuxrouter.xml'
+    sample_linuxrouter = './toynet/emulator/tests/sample_inputs/linuxrouter.xml'
 
     def test_XMLParser__linuxRouter(self):
         setOfRouterNames = {'r0'}

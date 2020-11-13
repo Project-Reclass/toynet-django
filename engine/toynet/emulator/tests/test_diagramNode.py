@@ -1,7 +1,7 @@
 import unittest
 
-from engine.toynet.emulator.toydiagram.diagramTree import DiagramNode, DeviceType
-from engine.toynet.emulator.util.error import DiagramGraphError, TypeCheckError
+from toynet.emulator.toydiagram.diagramTree import DiagramNode, DeviceType
+from toynet.emulator.util.error import DiagramGraphError, TypeCheckError
 
 class TestDiagramNodeMethods(unittest.TestCase):
 
