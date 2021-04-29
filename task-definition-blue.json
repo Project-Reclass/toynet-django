@@ -1,7 +1,7 @@
 [
     {
         "name": "toynet-django-container",
-        "image": "909056806605.dkr.ecr.us-east-2.amazonaws.com/toynet-django-repo:33079e8ba6abc60adfe045bbb322fffac7af9bb1",
+        "image": "909056806605.dkr.ecr.us-east-2.amazonaws.com/toynet-django-repo:latest",
         "cpu": 0,
         "memoryReservation": 256,
         "portMappings": [{
