@@ -15,7 +15,7 @@
             "volumesFrom": [],
             "secrets": [{
                 "name": "SECRET_KEY",
-                "valueFrom": "arn:aws:secretsmanager:us-east-2:909056806605:secret:toynet-django-secret-key-stage-dHbN5I"
+                "valueFrom": "arn:aws:secretsmanager:us-east-2:909056806605:secret:toynet-django-secretkey-dHbN5I"
             }]
         }
     ],
