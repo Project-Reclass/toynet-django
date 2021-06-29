@@ -19,7 +19,7 @@
             }]
         }
     ],
-    "executionRoleArn": "arn:aws:iam::243481923718:role/ecsTaskExecutionRole-toynet-django",
+    "executionRoleArn": "arn:aws:iam::243481923718:instance-profile/ecsTaskExecutionRole-toynet-django",
     "family": "toynet-django",
     "volumes": [],
     "placementConstraints": [],
